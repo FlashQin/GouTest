@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="net.goutalk.fowit">
+
+    <!-- 必要权限 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!-- 可选权限 -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.REQUEST_INSTALL_PACKAGES" />
+    <!--suppress DeprecatedClassUsageInspection -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <!-- 如果有视频相关的广告且使用textureView播放，请务必添加，否则黑屏 -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <!--可选，穿山甲提供“获取地理位置权限”和“不给予地理位置权限，开发者传入地理位置参数”两种方式上报用户位置，两种方式均可不选，添加位置权限或参数将帮助投放定位广告-->
+    <!--请注意：无论通过何种方式提供给穿山甲用户地理位置，均需向用户声明地理位置权限将应用于穿山甲广告投放，穿山甲不强制获取地理位置信息-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!--demo场景用到的权限，不是必须的-->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.EXPAND_STATUS_BAR" />
+
+    <uses-permission android:name="android.permission.SEND_SMS"/>
+    <uses-permission android:name="android.permission.READ_CONTACTS"/>
+    <application
+        android:name=".app.app"
+        android:allowBackup="true"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/iconapp"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        tools:replace="android:allowBackup,theme"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+        android:usesCleartextTraffic="true">
+
+        <activity
+            android:name=".Activity.FlashActivity"
+            android:theme="@style/FixSystemWindowTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+                <!--                <data-->
+                <!--                    android:host="chefu"-->
+                <!--                    android:path="/path"-->
+                <!--                    android:port="8080"-->
+                <!--                    android:scheme="youpin"/>-->
+                <!--                &lt;!&ndash;下面这几行也必须得设置&ndash;&gt;-->
+                <!--                <category android:name="android.intent.category.DEFAULT"/>-->
+                <!--                <action android:name="android.intent.action.VIEW"/>-->
+                <!--                <category android:name="android.intent.category.BROWSABLE"/>-->
+
+            </intent-filter>
+        </activity> <!-- 微信 -->
+        <activity android:name=".Activity.GuideActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:theme="@style/CustomCityPickerTheme" />
+        <activity android:name=".Activity.LoginUserActivity"
+
+            />
+        <activity android:name=".Activity.ResigerActivity"
+
+            />
+        <activity android:name=".Activity.GetMoneyActivity"
+
+            />
+        <activity android:name=".Activity.GoodsInfoActivity"
+
+            />
+        <activity android:name=".Activity.SuggestActivity"
+
+            />
+        <activity android:name=".Activity.ProblemActivity"
+
+        />
+        <activity android:name=".Activity.EmailActivity"
+
+            />
+        <activity android:name=".Activity.SetUserNameActivity"
+
+            />
+        <activity android:name=".Activity.UserInfoActivity"
+
+            />
+        <activity android:name=".Activity.LuckyActivity"
+
+            />
+        <activity android:name=".Activity.SingActivity"
+
+            />
+        <activity android:name=".Activity.LockerActivity"
+
+            />
+        <activity android:name=".Activity.AnsenwActivity"
+
+            />
+        <activity android:name=".Activity.QustionActivity"
+
+            />
+        <activity android:name=".Activity.WechatActivity"
+
+            />
+        <activity android:name=".Activity.ArilActivity"
+
+            />
+        <activity android:name=".Activity.AccountInfoActivity"
+
+            />
+        <activity android:name=".Activity.YaoActivity"
+
+            />
+        <activity android:name=".Activity.ProtocolActivity"
+
+            />
+        <activity android:name=".Activity.YinsiActivity"
+
+            />
+        <activity android:name=".Activity.ProInfoActivity"
+
+            />
+        <activity android:name=".Activity.SerchGoodsActivity"
+
+            />
+        <activity android:name=".Activity.BindPhoneActivity"
+
+            />
+        <activity android:name=".Activity.LoveActivity"
+
+            />
+        <activity android:name=".Activity.NewGoodsActivity"
+
+            />
+        <activity android:name=".Activity.HotActivity"
+
+            />
+
+        <activity
+            android:name=".Activity.VideoInfoActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+          />
+        <activity android:name=".Activity.JingLiIntrduceActivity"
+
+            />
+        <activity android:name=".Activity.JingLiInfoActivity"
+
+            />
+        <activity android:name=".Activity.JingLiPayActivity"
+
+            />
+        <activity android:name=".Activity.JiHuoActivity"
+
+            />
+        <activity android:name=".Activity.AboutActivity"
+
+            />
+        <activity android:name=".Activity.RankActivity"
+
+            />
+        <activity android:name=".Activity.NineActivity"
+
+            />
+        <activity android:name=".Activity.PhoneListActivity"
+
+            />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:noHistory="true"
+            android:launchMode="singleTask" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="123456" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="behind"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
+            android:label="@string/app_name" />
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:label="@string/app_name" />
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.TTFileProvider"
+            android:authorities="${applicationId}.TTFileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_pathszhi" />
+        </provider>
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <provider
+            android:name="com.bytedance.sdk.openadsdk.multipro.TTMultiProvider"
+            android:authorities="${applicationId}.TTMultiProvider"
+            android:exported="false" />
+    </application>
+
+</manifest>

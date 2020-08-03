@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/linnn"
+        layout="@layout/layout_title" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+
+            android:paddingBottom="50dp"
+
+            android:background="@drawable/drawable_suggst_one"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:background="#FFB943"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="恭喜你，名额已锁定！"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="12dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="请在5分30内完成支付"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="12dp"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="12sp"
+                    android:layout_height="wrap_content"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:background="#ffffff"
+                android:paddingLeft="12dp"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_gravity="center_vertical"
+                    android:background="@mipmap/dizhi"
+                    android:layout_height="20dp"/>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="5dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginLeft="15dp"
+                        android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/txtname"
+                        android:layout_width="wrap_content"
+                        android:text="小狗狗"
+                        android:textColor="#323232"
+
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_height="wrap_content"/>
+                        <TextView
+                            android:id="@+id/txtphone"
+
+                            android:layout_width="wrap_content"
+                            android:text="18782046493"
+                            android:textColor="#323232"
+                            android:textStyle="bold"
+                            android:layout_marginLeft="10dp"
+                            android:textSize="12sp"
+                            android:layout_height="wrap_content"/>
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/txtaddr"
+
+                        android:layout_width="wrap_content"
+                        android:text="四川省成都市哪里哪里哪里"
+                        android:textColor="#9E9E9E"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginBottom="12dp"
+                        android:textSize="10sp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:background="#f5f5f5"
+                android:layout_height="5dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:paddingBottom="15dp"
+                android:paddingTop="15dp"
+                android:paddingRight="10dp"
+                android:paddingLeft="10dp"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="勾点全球锦鲤卡价格"
+                        android:textColor="#323232"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:layout_height="wrap_content"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="限时抢购"
+                        android:textColor="@color/white"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:paddingTop="2dp"
+                        android:layout_marginLeft="10dp"
+                        android:paddingBottom="2dp"
+                        android:background="@drawable/drawable_jinglitxt"
+                        android:textSize="14sp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:text="0元"
+                    android:textColor="#FF7903"
+                    android:textStyle="bold"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:textSize="20sp"
+                    android:layout_height="wrap_content"/>
+            </RelativeLayout>
+            <View
+                android:layout_width="match_parent"
+                android:background="#f5f5f5"
+                android:layout_height="5dp"/>
+
+
+            <TextView
+                android:text="选择支付方式"
+                android:textStyle="normal"
+                android:textSize="@dimen/font_14"
+                android:textColor="#FF878787"
+                android:layout_marginStart="@dimen/len_10"
+                android:layout_marginTop="@dimen/len_20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <FrameLayout
+                android:id="@+id/layout_alipay"
+                android:layout_marginStart="@dimen/len_10"
+                android:layout_marginEnd="@dimen/len_10"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_height="@dimen/dp_50">
+
+                <ImageView
+                    android:background="@drawable/ic_ali"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24" />
+
+                <TextView
+                    android:text="支付宝"
+                    android:textColor="#FF4A4A4A"
+                    android:textSize="@dimen/font_14"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="normal"
+                    android:layout_marginStart="@dimen/len_40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/img_select_alipay"
+                    android:src="@drawable/pay_select"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/layout_wx"
+                android:layout_marginStart="@dimen/len_10"
+                android:layout_marginEnd="@dimen/len_10"
+                android:layout_width="match_parent"
+                android:layout_marginTop="@dimen/dp_10"
+                android:layout_height="@dimen/dp_50">
+
+                <ImageView
+                    android:background="@drawable/ic_wx"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_width="@dimen/len_24"
+                    android:layout_height="@dimen/len_24" />
+
+                <TextView
+                    android:text="微信"
+                    android:textColor="#FF4A4A4A"
+                    android:textSize="@dimen/font_14"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="normal"
+                    android:layout_marginStart="@dimen/len_40"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <ImageView
+                    android:id="@+id/img_select_wx"
+                    android:src="@drawable/pay_unselect"
+                    android:layout_gravity="center_vertical|end"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="@dimen/dp_30" />
+
+            </FrameLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_alignParentBottom="true"
+            android:paddingLeft="10dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:layout_gravity="center_vertical"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#4D4D4D"
+                        android:layout_marginLeft="5dp"
+                        android:text="邮费:"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@null"/>
+                    <TextView
+                        android:id="@+id/txtallmoney"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#E20C0C"
+                        android:text="10元"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:background="@null"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="#A9A9A9"
+                        android:layout_marginLeft="5dp"
+                        android:text="勾点全球购锦鲤卡价格0元"
+                        android:textStyle="normal"
+                        android:textSize="10sp"
+                        android:background="@null"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:background="#E20C0C"
+                android:layout_height="wrap_content">
+                <TextView
+
+                    android:id="@+id/txt_logain"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#ffffff"
+                    android:paddingTop="13dp"
+                    android:paddingBottom="13dp"
+                    android:text="确认支付"
+                    android:textSize="14sp"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:background="@null"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

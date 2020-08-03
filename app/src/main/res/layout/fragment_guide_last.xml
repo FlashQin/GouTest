@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        tools:src="@mipmap/yingdaoye_4" />
+
+    <net.qiujuer.genius.ui.widget.Button
+        android:id="@+id/btn_goto_main"
+        android:text="立即体验"
+        app:gTouchCornerRadius="@dimen/dp_27"
+        android:textColor="@color/white"
+        android:background="@drawable/selector_bg_login"
+        android:textSize="@dimen/font_18"
+        android:textStyle="bold"
+        android:enabled="true"
+        android:layout_gravity="bottom|center_horizontal"
+        android:gravity="center"
+        android:layout_marginStart="@dimen/len_96"
+        android:layout_marginEnd="@dimen/len_96"
+        android:layout_marginBottom="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_40" />
+
+</FrameLayout>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:clipChildren="false"
+
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/drawable_suggst_one"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp"
+        android:clipChildren="false"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:clipChildren="false"
+            android:gravity="center_horizontal"
+            android:layout_height="90dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+
+                android:src="@mipmap/lihesix"
+                android:layout_height="200dp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:text="恭喜你获得 "
+                android:textColor="#666666"
+                android:textSize="14sp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/txt_num_coin"
+                android:layout_width="wrap_content"
+                android:text="50"
+                android:textColor="#FC4F00"
+                android:textSize="16sp"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:text=" 金币"
+                android:textColor="#666666"
+                android:textSize="14sp"
+
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+        <FrameLayout
+            android:id="@+id/fra_exit"
+            android:background="@drawable/drawable_window_ok"
+            android:layout_width="match_parent"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:visibility="visible"
+            android:layout_marginBottom="20dp"
+            android:layout_height="45dp">
+
+            <TextView
+                android:id="@+id/txt_exit"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:text="观看一个视频,随机领取金币"
+                android:textSize="14sp"
+                android:gravity="center_vertical|center_horizontal"
+                android:background="@null"/>
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/banner_container"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="#D5D5D5" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/img_close"
+        android:layout_width="32dp"
+        android:src="@mipmap/wd_txyqmtc_quxiao"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="28dp"
+        android:layout_height="32dp"/>
+</LinearLayout>

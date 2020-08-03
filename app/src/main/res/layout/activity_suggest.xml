@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="#F5F5F5"
+    android:layout_height="match_parent"
+  >
+
+    <include layout="@layout/layout_title" />
+
+    <LinearLayout
+        android:layout_gravity="top"
+        android:layout_marginTop="@dimen/len_44"
+        android:orientation="vertical"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_marginBottom="@dimen/len_80"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_select_reason"
+            android:text="选择您要反馈的类型"
+            android:layout_marginStart="@dimen/len_20"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_20"
+            android:drawableTint="#FFC8C8C8"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/font_16"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30" />
+
+        <View
+            android:layout_marginTop="@dimen/dp_13"
+            android:layout_marginStart="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_20"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_marginStart="@dimen/len_20"
+            android:gravity="center_vertical"
+            android:background="@drawable/drawable_suggst_one"
+            android:layout_marginEnd="@dimen/len_20"
+            android:layout_height="75dp">
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_checkone"
+                    android:layout_width="18dp"
+                    android:src="@mipmap/checkyes"
+                    android:layout_height="18dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="#4D4D4D"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="功能异常"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_checktwo"
+                    android:layout_width="18dp"
+                    android:src="@mipmap/checkno"
+                    android:layout_height="18dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="#4D4D4D"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="产品建议"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:id="@+id/img_checkthree"
+                    android:layout_width="18dp"
+                    android:src="@mipmap/checkno"
+                    android:layout_height="18dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:textColor="#4D4D4D"
+                    android:textSize="16sp"
+                    android:layout_marginLeft="5dp"
+                    android:text="其它"
+                    android:textStyle="bold"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+        <TextView
+
+            android:text="您遇到的问题（详细说明）"
+            android:layout_marginStart="@dimen/len_20"
+            android:layout_marginTop="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_20"
+            android:drawableTint="#FFC8C8C8"
+            android:gravity="center_vertical"
+            android:textSize="@dimen/font_16"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_30" />
+        <EditText
+            android:id="@+id/et_suggest"
+            android:layout_marginStart="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_20"
+            android:background="@drawable/drawable_suggst_one"
+            android:minHeight="@dimen/len_116"
+            android:hint="请输入不少于10 个字的描述"
+            android:textSize="@dimen/font_16"
+            android:layout_marginTop="5dp"
+            android:textColor="@color/black"
+            android:gravity="start"
+            android:padding="16dp"
+            android:textColorHint="#FFB7B7B7"
+            android:layout_width="match_parent"
+            android:layout_height="176dp" />
+
+        <TextView
+            android:text="上传截图"
+            android:layout_marginStart="@dimen/len_20"
+            android:layout_marginTop="@dimen/len_20"
+            android:textSize="@dimen/font_16"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rec_img"
+            android:nestedScrollingEnabled="false"
+            android:layout_marginTop="@dimen/dp_10"
+            android:visibility="gone"
+            android:background="@drawable/drawable_suggst_one"
+            android:layout_marginStart="@dimen/len_20"
+            android:layout_marginEnd="@dimen/len_20"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+
+    <net.qiujuer.genius.ui.widget.Button
+        android:id="@+id/btn_commit"
+        android:text="提交反馈"
+        android:textColor="@color/white"
+        app:gTouchCornerRadius="@dimen/dp_27"
+        android:background="@drawable/drawable_login_tv_ok"
+        android:textSize="@dimen/font_18"
+        android:textStyle="bold"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="@dimen/len_20"
+        android:gravity="center"
+        android:layout_width="285dp"
+        android:layout_height="40dp" />
+
+</FrameLayout>

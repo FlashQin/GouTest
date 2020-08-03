@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f5f5f5"
+    android:orientation="vertical">
+
+    <include layout="@layout/layout_title" />
+
+
+    <TextView
+        android:id="@+id/tv_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textColor="#666666"
+        android:textSize="@dimen/font_14"
+        android:layout_marginTop="@dimen/len_20"
+        android:text="勾转APP（以下亦称“我们”）尊重并保护所有使用勾转APP平台服务的用户的个人隐私权，在您使用勾转APP提供的服务时（下称“服务”），我们将按照本隐私权条款收集、使用、
+        共享及保护您的个人信息。本隐私权条款包含了我们收集、存储、使用、共享和保护您的个人信息的条款，我们希望通过本隐私权条款向您清晰地介绍我们对为您提供的访问、更新、控制和保护
+        您个人信息的方式，因此请您完整地阅读本《勾转APP隐私权条款》（下称“本隐私权条款”），作出您认为适当的选择。如果您不同意本隐私权条款的任何内容，您应立即停止使用勾转APP平台服务
+        。当您使用勾转APP平台提供的任一服务时，即表示您已同意我们按照本隐私权条款来合法使用和保护您的个人信息。此后，您不得以未读本协议的内容提出异议
+        。我们深知个人信息对您的重要性，并会尽全力保护您的个人信息安全可靠。我们致力于维持您对我们的信任，恪守以下原则，保护您的个人信息：权责一致原则、目
+        的明确原则、选择同意原则、最少够用原则、确保安全原则、主体参与原则、公开透明原则等。同时，我们承诺，我们将按业界成熟的安全标准，采取相应的安全保护措施来保护您的个人信息" />
+
+
+</LinearLayout>

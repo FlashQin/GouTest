@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+ >
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/len_44">
+
+        <ImageView
+            android:id="@+id/icon_back"
+            android:src="@mipmap/img_back_gou"
+            android:tint="#FF182C4F"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="@dimen/dp_8"
+            android:scaleType="centerInside"
+            android:padding="@dimen/len_12"
+            android:layout_width="@dimen/len_44"
+            android:layout_height="@dimen/len_44" />
+
+    </FrameLayout>
+
+    <TextView
+        android:textStyle="bold"
+        android:textSize="@dimen/font_18"
+        android:text="绑定手机号"
+        android:layout_marginTop="@dimen/len_20"
+        android:layout_marginStart="@dimen/dp_30"
+        android:textColor="@color/color_3f3f3f"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/layout_yzm"
+        tools:visibility="visible"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/xTabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginStart="@dimen/dp_30"
+        android:layout_marginEnd="@dimen/dp_30"
+        android:layout_marginTop="@dimen/dp_30"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <FrameLayout
+            android:background="@drawable/drawable_login_tv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44">
+
+            <TextView
+                android:text="+86"
+                android:textColor="@color/color_tv_indicator"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/font_14"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/et_sms_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_login_hint_tv"
+                android:hint="请输入您的手机号码"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="@dimen/font_14"
+                android:layout_marginStart="@dimen/dp_72"
+                android:gravity="center_vertical"
+                android:background="@null" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/dp_10"
+            android:background="@drawable/drawable_login_tv_bg"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/len_44">
+
+            <TextView
+                android:text="验证码"
+                android:textColor="@color/black"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/font_14"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <EditText
+                android:id="@+id/et_sms_code"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="@color/color_login_hint_tv"
+                android:hint="请输入验证码"
+                android:inputType="number"
+                android:maxLength="6"
+                android:layout_marginEnd="@dimen/dp_90"
+                android:textSize="@dimen/font_14"
+                android:layout_marginStart="@dimen/dp_72"
+                android:gravity="center_vertical"
+                android:background="@null" />
+
+            <TextView
+                android:id="@+id/tv_get_sms_code"
+                android:layout_gravity="end|center_vertical"
+                android:gravity="center_vertical"
+                android:textSize="@dimen/font_14"
+                android:textColor="@color/color_tv_indicator"
+                android:text="获取验证码"
+                android:layout_marginEnd="@dimen/len_20"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_marginTop="@dimen/dp_40"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <net.qiujuer.genius.ui.widget.Button
+                android:id="@+id/btn_agree_and_login"
+                android:text="下一步"
+                app:gTouchCornerRadius="@dimen/dp_27"
+                android:textColor="@color/white"
+                android:background="@drawable/selector_bg_login"
+                android:textSize="@dimen/font_18"
+                android:textStyle="bold"
+                android:enabled="false"
+                android:paddingStart="@dimen/dp_70"
+                android:paddingEnd="@dimen/dp_70"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:layout_marginStart="@dimen/dp_30"
+                android:layout_marginEnd="@dimen/dp_30"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_54" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

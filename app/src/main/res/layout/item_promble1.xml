@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+    <RelativeLayout
+        android:id="@+id/rel_one"
+        android:paddingRight="12dp"
+        android:paddingLeft="12dp"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+
+        <TextView
+            android:id="@+id/txtname"
+            android:layout_width="wrap_content"
+            android:text="提现多久到账"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:textColor="#4D4D4D"
+            android:textSize="14sp"
+
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:layout_width="14dp"
+            android:src="@mipmap/next_right"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="14dp"/>
+        <View
+            android:layout_width="match_parent"
+            android:background="#F0F0F0"
+            android:layout_alignParentBottom="true"
+            android:layout_marginTop="9dp"
+            android:layout_height="1dp"/>
+    </RelativeLayout>
+</LinearLayout>

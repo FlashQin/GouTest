@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools">
+    <RelativeLayout
+        android:id="@+id/layout_wx"
+        android:layout_marginStart="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/dp_10"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/dsfsdfsd"
+            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_centerVertical="true"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/name"
+                tools:text="微信"
+                android:textColor="#4D4D4D"
+                android:textSize="16sp"
+                android:layout_marginLeft="5dp"
+                android:layout_gravity="center_vertical"
+                android:textStyle="normal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <ImageView
+
+                    android:background="@drawable/phon"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+                <TextView
+                    android:id="@+id/phone"
+                    tools:text="18782046491"
+                    android:textColor="#A9A9A9"
+                    android:textSize="12sp"
+                    android:layout_gravity="center_vertical"
+                    android:textStyle="normal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/money"
+            android:text="邀请他赚不停"
+            android:textColor="#E20C0C"
+            android:layout_centerVertical="true"
+            android:textSize="16sp"
+            android:layout_toRightOf="@+id/dsfsdfsd"
+            android:layout_gravity="center"
+            android:textStyle="normal"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <ImageView
+            android:id="@+id/img_select_wx"
+            android:src="@drawable/yuanbai"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_gravity="center_vertical|end"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+
+    </RelativeLayout>
+</LinearLayout>

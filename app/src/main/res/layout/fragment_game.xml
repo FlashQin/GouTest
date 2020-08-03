@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_width="match_parent"
+    android:fillViewport="true"
+    android:layout_height="match_parent">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartLayout"
+        app:srlEnableAutoLoadMore="true"
+        android:paddingBottom="@dimen/dp_8"
+        android:background="#FFF9F9F9"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <androidx.core.widget.NestedScrollView
+        android:fillViewport="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="match_parent">
+
+
+        <RelativeLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+
+
+            android:background="#F5F5F5"
+            android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/img_bac"
+                android:gravity="center_vertical"
+                android:background="@mipmap/shouye_banner"
+                android:layout_width="match_parent"
+                android:layout_height="240dp" />
+            <LinearLayout
+                android:layout_marginStart="@dimen/len_20"
+                android:layout_marginEnd="@dimen/len_20"
+                android:paddingBottom="@dimen/dp_5"
+                android:paddingTop="@dimen/dp_5"
+                android:visibility="gone"
+                android:layout_marginTop="30dp"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="42dp">
+
+                <ImageView
+                    android:id="@+id/tv_location"
+
+                    android:src="@mipmap/shouye_touxiang"
+                    android:gravity="center_vertical"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp" />
+
+                <LinearLayout
+                    android:id="@+id/tv_search"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="@dimen/dp_10"
+                    android:background="@drawable/drawable_main_top_search"
+                    android:layout_marginEnd="@dimen/dp_10"
+                    android:paddingStart="@dimen/dp_13"
+                    android:paddingEnd="@dimen/dp_13"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="29dp">
+
+                    <ImageView
+                        android:scaleType="centerInside"
+                        android:layout_gravity="center_vertical"
+                        android:src="@mipmap/fangdajing2x"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp" />
+
+                    <TextView
+                        android:text="@string/tv_search"
+                        android:gravity="center"
+                        android:textSize="14sp"
+                        android:textColor="#CFCFCF"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" />
+
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/img_msg"
+                    android:padding="@dimen/dp_4"
+                    android:layout_width="@dimen/dp_30"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linnn"
+                android:layout_width="match_parent"
+                android:visibility="gone"
+
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/drawable_main_bottom_search"
+                android:layout_marginRight="12dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:layout_alignParentBottom="true"
+                android:layout_height="91dp">
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginTop="9dp"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:src="@mipmap/shouye_icon_fuli2x2x"
+                        android:layout_height="54dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="福利"
+                        android:textColor="#4D4D4D"
+                        android:textStyle="bold"
+                        android:textSize="14sp"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:src="@mipmap/shouye_icon_tiaozan2x"
+                        android:layout_height="54dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="挑战"
+                        android:textColor="#4D4D4D"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center_horizontal"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:src="@mipmap/shouye_icon_choujiang2x"
+                        android:layout_height="54dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="抽奖"
+                        android:textColor="#4D4D4D"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:gravity="center_horizontal"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="54dp"
+                        android:src="@mipmap/shouye_icon_xingyou2x"
+                        android:layout_height="54dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="新游"
+                        android:textColor="#4D4D4D"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:id="@+id/sdfdsf"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="162dp"
+                android:descendantFocusability="blocksDescendants"
+                android:orientation="vertical">
+
+                <com.cmcm.cmgame.GameView
+                    android:id="@+id/gameView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="5dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginBottom="15dp"
+                    app:cmgame_category_title_text_color="#FF222222"
+                    app:cmgame_category_title_text_size="15sp"
+                    />
+
+                <!--cmgame_category_title_text_color 分类目录文字颜色-->
+                <!--cmgame_category_title_text_size 分类目录文字大小-->
+                <!--cmgame_view_background 整个View背景，demo使用的是8dp圆角白底-->
+            </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerview_home"
+                android:layout_width="match_parent"
+                android:layout_below="@+id/linnn"
+                android:visibility="gone"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:layout_height="match_parent"/>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+
+</FrameLayout>

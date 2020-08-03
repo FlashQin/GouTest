@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+    <LinearLayout
+        android:id="@+id/layout_top_search"
+        android:layout_marginStart="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10"
+        android:layout_marginTop="@dimen/dp_4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_38">
+
+        <FrameLayout
+            android:background="@drawable/drawable_main_top_search"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:src="@mipmap/sy_sousuo"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_width="@dimen/len_22"
+                android:layout_height="@dimen/len_22" />
+
+            <EditText
+                android:id="@+id/et_search"
+                android:hint="根据商品/关键词搜索"
+                android:background="@null"
+                android:textSize="@dimen/font_14"
+
+                android:inputType="text"
+                android:imeOptions="actionSearch"
+                android:textColor="#FF9999AF"
+                android:layout_marginStart="@dimen/len_36"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_cancel"
+            android:text="取消"
+            android:gravity="center_vertical"
+            android:paddingStart="@dimen/len_14"
+            android:paddingEnd="@dimen/dp_0"
+            android:textSize="@dimen/font_14"
+            android:textColor="#FF3A3449"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+
+<com.scwang.smartrefresh.layout.SmartRefreshLayout
+    android:id="@+id/smallLabel"
+    android:layout_width="match_parent"
+    android:layout_marginTop="50dp"
+    android:layout_height="match_parent">
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rec_his"
+        android:layout_marginStart="@dimen/len_10"
+        android:layout_marginEnd="@dimen/len_10"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layout_top_search"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+</com.scwang.smartrefresh.layout.SmartRefreshLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

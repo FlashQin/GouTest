@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/frrrrrrrrr"
+    android:layout_height="@dimen/len_44"
+    android:fitsSystemWindows="true"
+    android:translationZ="@dimen/dp_18"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <ImageView
+        android:id="@+id/img_back"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/back"
+        android:layout_marginEnd="@dimen/dp_0"
+        android:layout_marginTop="@dimen/dp_0"
+        android:layout_marginBottom="@dimen/dp_0"
+        android:layout_marginStart="@dimen/len_20"
+        android:paddingEnd="@dimen/dp_0"
+        android:layout_width="24dp"
+        android:layout_height="24dp" />
+
+    <TextView
+        android:id="@+id/tv_title"
+        tools:text="消息中心"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#333333"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:lines="1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/len_44" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_gravity="end"
+        android:layout_marginEnd="@dimen/len_8"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/tv_right_title"
+            android:textStyle="normal"
+            android:textSize="@dimen/font_12"
+            android:textColor="#FF00B3FF"
+            tools:visibility="visible"
+
+            android:gravity="center"
+            android:layout_marginEnd="@dimen/dp_4"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/len_44" />
+
+        <ImageView
+            android:id="@+id/title_img"
+
+            tools:visibility="visible"
+
+            android:paddingEnd="@dimen/dp_8"
+            android:visibility="gone"
+            android:layout_gravity="center_vertical"
+            android:layout_width="@dimen/dp_30"
+            android:layout_height="@dimen/dp_30" />
+
+    </LinearLayout>
+
+</FrameLayout>

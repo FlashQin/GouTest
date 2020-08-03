@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="test">
+        <item>维修保养</item>
+        <item>加油</item>
+        <item>汽车美容</item>
+        <item>代驾</item>
+        <item>改装</item>
+    </string-array>
+</resources>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <include layout="@layout/layout_title" />
+
+    <EditText
+        android:id="@+id/et"
+        android:background="@null"
+        android:textColor="@color/black"
+        android:hint="请输入用户昵称"
+        android:maxLength="20"
+        android:layout_marginStart="@dimen/len_22"
+        android:layout_marginEnd="@dimen/len_22"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_50" />
+
+    <View
+        android:background="#FFF4F4F4"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_1" />
+    <FrameLayout
+        android:id="@+id/fra_exit"
+        android:background="@drawable/drawable_login_tv_ok"
+        android:layout_width="match_parent"
+        android:layout_marginTop="70dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="visible"
+        android:layout_marginBottom="20dp"
+        android:layout_height="45dp">
+
+
+
+        <TextView
+            android:id="@+id/txt_exit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textColor="#ffffff"
+            android:text="提交"
+            android:textSize="20sp"
+            android:gravity="center_vertical|center_horizontal"
+            android:background="@null"/>
+
+    </FrameLayout>
+
+
+</LinearLayout>

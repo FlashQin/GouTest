@@ -1,0 +1,64 @@
+<resources>
+    <string name="app_name">勾转</string>
+    <string name="main_bottom_zhuye">购物</string>
+    <string name="main_bottom_game">游戏</string>
+    <string name="main_bottom_shangcheng">商城</string>
+    <string name="main_bottom_mendian">视频</string>
+    <string name="main_bottom_geren">个人</string>
+    <string name="tv_search">搜索商品或特权</string>
+    <string name="str_get_sms_code">获取验证码</string>
+    <string name="str_msg_system">系统消息</string>
+    <string name="str_msg_order">订单消息</string>
+    <string name="str_msg_work">业务消息</string>
+    <string name="str_msg_center">消息中心</string>
+    <string name="str_see_detail">查看详情</string>
+    <string name="str_buy">立即购买</string>
+    <string name="str_into_shop_car">加入购物车</string>
+    <string name="tv_weizhang">违章</string>
+    <string name="login_only_can_input">qwertyuioplkjhgfdsazxcvbnmQWERTYUIOPLKJHGFDSAZXCVBNM1234567890</string>
+    <string name="tv_search_shop_key">搜索门店关键词</string>
+    <string name="tv_promote">请填写保养内容</string>
+    <string name="cp_search_hint_text">城市中文名或拼音</string>
+    <string name="cp_cancel">取消</string>
+    <string name="cp_no_result">没有找到，换个词试试~</string>
+    <string name="cp_locate_failed">定位失败</string>
+    <string name="cp_locating">正在定位…</string>
+    <string name="body_detail">宝贝</string>
+    <string name="product_case">详情</string>
+    <string name="experts_know">专家知道</string>
+    <string name="evaluation">推荐</string>
+    <string name="slide_up_to_unlock">Slide up To Unlock</string>
+    <string name="release_to_unlock">Release to Unlock</string>
+    <string name="pull_canceled">Pull Canceled</string>
+    <string-array name="colors">
+        <item>#fef9f7</item>
+        <item>#fbc6a9</item>
+        <item>#ffdecc</item>
+        <item>#fbc6a9</item>
+        <item>#ffdecc</item>
+        <item>#fbc6a9</item>
+        <item>#ffdecc</item>
+        <item>#ffdecc</item>
+    </string-array>
+    <string-array name="names">
+        <item>20金币</item>
+        <item>神秘礼物</item>
+        <item>40金币</item>
+        <item>神秘礼物</item>
+        <item>60金币</item>
+        <item>神秘礼物</item>
+        <item>80金币</item>
+        <item>神秘礼物</item>
+    </string-array>
+
+    <string-array name="icons">
+        <item>jingbi</item>
+        <item>liwu</item>
+        <item>jingbi</item>
+        <item>liwu</item>
+        <item>jingbi</item>
+        <item>liwu</item>
+        <item>jingbi</item>
+        <item>liwu</item>
+    </string-array>
+</resources>

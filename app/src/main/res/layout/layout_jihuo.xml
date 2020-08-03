@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/linnn"
+        layout="@layout/layout_title" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginRight="15dp"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+
+            <TextView
+
+                android:layout_gravity="center_vertical"
+                android:text="持卡人姓名"
+                android:textColor="#2B2B2B"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+
+                android:id="@+id/et_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#CCCCCC"
+                android:hint="请输入持卡人姓名"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="14sp"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+
+            <TextView
+
+                android:layout_gravity="center_vertical"
+                android:text="卡号"
+                android:textColor="#2B2B2B"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+
+                android:id="@+id/et_number"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#CCCCCC"
+                android:hint="请输入持卡人姓名"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="14sp"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+
+            <TextView
+
+                android:layout_gravity="center_vertical"
+                android:text="激活码"
+                android:textColor="#2B2B2B"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+
+                android:id="@+id/et_ma"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#CCCCCC"
+                android:hint="请输入锦鲤卡背面激活码"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="14sp"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="50dp">
+
+            <TextView
+
+                android:layout_gravity="center_vertical"
+                android:text="手机号"
+                android:textColor="#2B2B2B"
+                android:textSize="17sp"
+                android:textStyle="bold"
+                android:layout_width="85dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+
+                android:id="@+id/et_sms_phone"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#CCCCCC"
+                android:hint="请输入手机号"
+                android:inputType="number"
+                android:maxLength="11"
+                android:textSize="14sp"
+                android:layout_marginStart="20dp"
+                android:layout_gravity="center_vertical"
+                android:background="@null"/>
+
+        </LinearLayout>
+        <FrameLayout
+            android:background="@drawable/drawable_login_tv_ok"
+            android:layout_width="match_parent"
+            android:layout_marginTop="45dp"
+            android:layout_height="45dp">
+
+
+
+            <TextView
+                android:id="@+id/txt_logain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#ffffff"
+                android:text="立即激活"
+
+                android:textSize="20sp"
+                android:gravity="center_vertical|center_horizontal"
+                android:background="@null"/>
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
