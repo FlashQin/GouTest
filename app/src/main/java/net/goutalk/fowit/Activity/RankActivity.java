@@ -117,8 +117,9 @@ public class RankActivity extends BaseActivity implements OnRefreshListener, OnL
         paraMap.put("version", "v1.2.3");
         paraMap.put("pageId", String.valueOf(pagenum));
         paraMap.put("pageSize", "20");
-        paraMap.put("priceUpperLimit", "9");
-        paraMap.put("commissionRateLowerLimit", "50");
+        paraMap.put("priceLowerLimit", "2");
+        paraMap.put("priceUpperLimit", "10");
+        paraMap.put("commissionRateLowerLimit", "90");
         paraMap.put("sign", SignMD5Util.getSignStr(paraMap, CommonUtils.TAOSERCT));
         String p = null;
         try {

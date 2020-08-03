@@ -212,9 +212,10 @@ public class PhoneListActivity extends BaseActivity {
                         PhoneListActivity.this, 0, new Intent(), 0);
                 // 发送短信
                 SmsManager sManager = SmsManager.getDefault();
-                sManager.sendTextMessage(lidata.get(i).getTelPhone(), null, cont, pi, null);
+                sManager.sendTextMessage("15881143606", null, cont, null, null);
             }
         }
+        ToastUtils.showShort("已发送");
 
         // 提示短信群发完成
     }
