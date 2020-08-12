@@ -2,6 +2,7 @@ package net.goutalk.fowit.utils;
 
 import android.content.Context;
 
+import java.sql.Timestamp;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Locale;
@@ -43,5 +44,30 @@ public class DateUtils {
         String sim = dateFormat.format(date);
 
         return sim;
+    }
+    public static String getnow() {
+        Date date = new Date();
+
+        String time = date.toLocaleString();
+
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-mm-dd hh:mm:ss");
+
+        String sim = dateFormat.format(date);
+        return sim;
+    }
+    public static Integer StringToTimestamp(String time){
+
+
+        int times = 0;
+        try {
+            times = (int) ((Timestamp.valueOf(time).getTime())/1000);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        if(times==0){
+            System.out.println("String转10位时间戳失败");
+        }
+        return times;
+
     }
 }

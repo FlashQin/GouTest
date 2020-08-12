@@ -7,12 +7,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.youth.banner.loader.ImageLoader;
 
-/**
- * @author lzy <axhlzy@live.cn>
- * @created 20/02/28
- * @modified 20/02/28
- * @description com.haichuang.chefu.utils
- */
+
 public class GlideImageLoader extends ImageLoader {
 
     private int Round_dp = 10;
@@ -33,6 +28,7 @@ public class GlideImageLoader extends ImageLoader {
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
         if (!isCheckUrl) {
+
             Glide.with(context)
                     .load(path)
                     .apply(RequestOptions.bitmapTransform(new GlideRoundTransform(context, Round_dp)))

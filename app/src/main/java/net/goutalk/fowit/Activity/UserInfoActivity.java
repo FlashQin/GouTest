@@ -25,10 +25,10 @@ import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.zhihu.matisse.Matisse;
 import com.zhihu.matisse.MimeType;
 
+import net.goutalk.fowit.Bean.UserInfoBean;
 import net.goutalk.fowit.R;
 import net.goutalk.fowit.Base.BaseActivity;
 import net.goutalk.fowit.Base.BaseMsgBean;
-import net.goutalk.fowit.Bean.NameBean;
 import net.goutalk.fowit.net.BaseObserver;
 import net.goutalk.fowit.utils.ACache;
 import net.goutalk.fowit.utils.GlideEngine;
@@ -120,15 +120,20 @@ public class UserInfoActivity extends BaseActivity {
                     @Override
                     public void onNext(BaseMsgBean codeBean) {
                         if (codeBean.getCode() == 0) {
-                            NameBean nameBean = JSONObject.parseObject(JSONObject.toJSONString(codeBean), NameBean.class);
+                            UserInfoBean nameBean = JSONObject.parseObject(JSONObject.toJSONString(codeBean), UserInfoBean.class);
 
                             tvUserName.setText(nameBean.getData().getNickName()+"");
-                            tvUserSex.setText(nameBean.getData().getSex()+"");
-                            tvUserPhone.setText(nameBean.getData().getMobileNo()+"");
-                            tvUserAlip.setText(nameBean.getData().getAlipayNo()+"");
-                            tvUserWechat.setText(nameBean.getData().getWechatNo()+"");
+                            tvUserSex.setText(nameBean.getData().getSex()==1?"男":"女"+"");
+                            tvUserPhone.setText(nameBean.getData().getMobileNo()==null?"请绑定":nameBean.getData().getMobileNo()+"");
+                            tvUserAlip.setText(nameBean.getData().getAlipayNo()==null?"请绑定":nameBean.getData().getAlipayNo()+"");
+                            tvUserWechat.setText(nameBean.getData().getWechatNo()==null?"请绑定":nameBean.getData().getWechatNo()+"");
                             tvUserPass.setText(nameBean.getData().getPassword()+"");
-                            tvUserEmail.setText(nameBean.getData().getEmail()+"");
+                            tvUserEmail.setText(nameBean.getData().getEmail()==null?"请绑定":nameBean.getData().getEmail()+"");
+                            //if (nameBean.getData().getHeadUrl() != null) {
+//                                Glide.with(UserInfoActivity.this)
+//                                        .load(R.mipmap.shouye_touxiang)
+//                                        .into(imgHeadInfo);
+                           // }
 
                         } else {
                           //  ToastUtils.showShort(codeBean.getMsg());

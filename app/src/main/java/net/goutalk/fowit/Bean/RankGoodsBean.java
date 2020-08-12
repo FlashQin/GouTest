@@ -1,5 +1,9 @@
 package net.goutalk.fowit.Bean;
 
+import com.bytedance.sdk.openadsdk.TTAdNative;
+import com.bytedance.sdk.openadsdk.TTFeedAd;
+import com.bytedance.sdk.openadsdk.TTNativeExpressAd;
+
 import java.util.List;
 
 public class RankGoodsBean {
@@ -117,8 +121,18 @@ public class RankGoodsBean {
         private int quanMLink;
         private int hzQuanOver;
         private int yunfeixian;
-        private int estimateAmount;
+        private double estimateAmount;
         private int freeshipRemoteDistrict;
+
+        public boolean getmData() {
+            return mData;
+        }
+
+        public void setmData(boolean mData) {
+            this.mData = mData;
+        }
+
+        private boolean mData;
 
         public int getId() {
             return id;
@@ -376,11 +390,11 @@ public class RankGoodsBean {
             this.yunfeixian = yunfeixian;
         }
 
-        public int getEstimateAmount() {
+        public double getEstimateAmount() {
             return estimateAmount;
         }
 
-        public void setEstimateAmount(int estimateAmount) {
+        public void setEstimateAmount(double estimateAmount) {
             this.estimateAmount = estimateAmount;
         }
 

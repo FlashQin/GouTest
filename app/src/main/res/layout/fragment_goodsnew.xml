@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tl="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/view_fit"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_0"
+        android:background="@color/transparent" />
+    <LinearLayout
+        android:id="@+id/tv_search"
+        android:layout_width="match_parent"
+        android:layout_height="32dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/drawable_main_top_search"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/dp_13"
+        android:paddingEnd="@dimen/dp_13">
+
+        <ImageView
+            android:layout_width="@dimen/len_24"
+            android:layout_height="@dimen/len_24"
+            android:layout_gravity="center_vertical"
+            android:scaleType="centerInside"
+            android:src="@mipmap/sy_sousuo" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/tv_search" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content">
+
+
+    <com.flyco.tablayout.SlidingTabLayout
+        android:id="@+id/tl_9"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:paddingBottom="10dp"
+        app:tl_textSelectColor="#E20C0C"
+        app:tl_tab_space_equal="false"
+        app:tl_textBold="SELECT"
+        app:tl_tab_padding="5dp"
+        app:tl_textUnselectColor="#292929"
+        app:tl_indicator_style="NORMAL"
+        app:tl_indicator_width_equal_title="true"
+        tl:tl_indicator_color="#E20C0C"
+        app:tl_indicator_width="15dp"
+        tl:tl_indicator_margin_left="2dp"
+        tl:tl_indicator_margin_right="2dp"
+        tl:tl_textsize="16sp" />
+    </RelativeLayout>
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/lin_listdetl_back"
+        android:layout_below="@+id/sdfsdfs" />
+
+</LinearLayout>

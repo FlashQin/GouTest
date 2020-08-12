@@ -61,7 +61,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     private CompositeDisposable disposable;
 
     private boolean isFullScreen = false;
-
+   public double baifen=50;
     private boolean isAllowScreenRoate = false;
     private LoadingDialog loadingDialog;
     private String[] name = {"朋友圈", "微信好友", "QQ", "QQ空间"};

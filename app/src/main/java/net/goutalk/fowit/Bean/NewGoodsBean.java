@@ -202,7 +202,15 @@ public class NewGoodsBean {
             private int tbcid;
             private List<?> subcid;
             private List<String> specialText;
+            public boolean getmData() {
+                return mData;
+            }
 
+            public void setmData(boolean mData) {
+                this.mData = mData;
+            }
+
+            private boolean mData;
             public int getId() {
                 return id;
             }

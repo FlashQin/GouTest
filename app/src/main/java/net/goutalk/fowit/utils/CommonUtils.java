@@ -65,7 +65,10 @@ public class CommonUtils {
     public static String mPicInfo="945297102";  //图文信息流，信息流广告，模板渲染
     public static String mlockAd="945309440";  //锁屏信息流
     public static String mQustionBanner="945309229";  //答题信息流
-
+    public static String mGoodsListr1="945371768";
+    public static String mGoodsListr2="945371760";
+    public static String mGoodsListr3="945371759";
+    public static String mGoodsListr4="945371662";
     private static final String SD_APP_DIR_NAME = "TestDir"; //存储程序在外部SD卡上的根目录的名字
     private static final String PHOTO_DIR_NAME = "photo";    //存储照片在根目录下的文件夹名字
     private static long mBackPressedTime;
@@ -83,6 +86,7 @@ public class CommonUtils {
     public static int pingtype=9;
     public static String code="";
     public static String likeid="";
+    public static String kaduofenappkey="gouzhuankeji";
     /**
      * 微信key
      * */
@@ -91,6 +95,8 @@ public class CommonUtils {
     public static final String QQAPP_ID_WX = "101880481";
     public static final String TAOAPPKEY = "5f115e3f5ec30";//大淘客key
     public static final String TAOSERCT = "d4cd646cf905e27b13c1519390233c36";//大淘客sercirt
+    public static final String JDAPPKEY = "2810e99a4205ce6ff95afa25bd9b3dfc";//大淘客key
+    public static final String JDSERCT = "77aaa7588f69499eb1e2f079ffd7c5c5";//大淘客sercirt
     public static String checkImgUrl(String url) {
         return url.startsWith("http") ? url : Url.baseUrl + url;
     }

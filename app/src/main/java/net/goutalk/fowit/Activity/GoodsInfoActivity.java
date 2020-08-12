@@ -34,6 +34,7 @@ import com.alibaba.baichuan.trade.biz.login.AlibcLoginCallback;
 import com.alibaba.baichuan.trade.common.utils.AlibcLogger;
 import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.SPUtils;
+import com.blankj.utilcode.util.ToastUtils;
 import com.bumptech.glide.Glide;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
@@ -60,6 +61,7 @@ import net.goutalk.fowit.Base.BaseMsgBean;
 import net.goutalk.fowit.Bean.GoodsDetileBean;
 import net.goutalk.fowit.Bean.GoodsLinkBean;
 import net.goutalk.fowit.Bean.ShareBean;
+import net.goutalk.fowit.Bean.UserInfoBean;
 import net.goutalk.fowit.R;
 import net.goutalk.fowit.fragment.FMBadyDetail;
 import net.goutalk.fowit.fragment.FMCommonList;
@@ -196,6 +198,7 @@ public class GoodsInfoActivity extends BaseActivity {
     public List<ShareBean> listshare = new ArrayList<>();
     private IWXAPI api;
 
+    private String menberid="",pid="";
     @Override
     public int getLayoutId() {
         return R.layout.activity_test;
@@ -231,6 +234,32 @@ public class GoodsInfoActivity extends BaseActivity {
         viewPager.setOffscreenPageLimit(3);
 
 
+
+    }
+    private void postInventCode(String code) {
+        RxHttp.postForm("/login/baichuan/callback.do")
+                .add("url", code)
+                .asObject(BaseMsgBean.class)
+                .as(RxLife.asOnMain(this))
+                .subscribe(new BaseObserver<BaseMsgBean>() {
+                    @Override
+                    public void onNext(BaseMsgBean codeBean) {
+                        if (codeBean.getCode() == 0) {
+
+                            //ToastUtils.showShort("激活成功");
+
+                        } else {
+                           // ToastUtils.showShort(codeBean.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        super.onError(e);
+                        ToastUtils.showShort(e.toString());
+                    }
+                });
+
     }
 
     public void logainTaoBao() {
@@ -239,7 +268,9 @@ public class GoodsInfoActivity extends BaseActivity {
             @Override
             public void onSuccess(int result, String userId, String nick) {
                 //Toast.makeText(TestActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+
                 goTaoByItemUrl(goodsLinkBean.getData().getItemUrl());
+                getIsLogainTao();
             }
 
             @Override
@@ -256,6 +287,7 @@ public class GoodsInfoActivity extends BaseActivity {
         if (statu.contains("topAccessToken=null")) {
             islagin = false;
         } else {
+            postInventCode(statu);
             islagin = true;
         }
         return islagin;
@@ -319,7 +351,8 @@ public class GoodsInfoActivity extends BaseActivity {
                             goodsDetileBean = JSONObject.parseObject(JSONObject.toJSONString(codeBean), GoodsDetileBean.class);
 
                             //  goodsId = goodsDetileBean.getData().getGoodsId();
-                            initUrl();//转链
+
+
                             shopNameTv.setText(goodsDetileBean.getData().getTitle());
                             shopSale.setText("已售: " + goodsDetileBean.getData().getMonthSales() + "");
                             shopTitleTv.setText("市场价￥ " + goodsDetileBean.getData().getOriginalPrice());
@@ -425,12 +458,44 @@ public class GoodsInfoActivity extends BaseActivity {
 //        StatusBarUtils.StatusBarLightMode(this, StatusBarUtils.StatusBarLightMode(this));
 //    }
 
+    private void getUserInfo() {
+        RxHttp.postForm("/memberCenter/baseInfo.json")
+                .asObject(BaseMsgBean.class)
+                .as(RxLife.asOnMain(this))
+                .subscribe(new BaseObserver<BaseMsgBean>() {
+                    @Override
+                    public void onNext(BaseMsgBean baseMsgBean) {
+                        if (baseMsgBean.getCode() == 0) {
+                            UserInfoBean     codeBean = JSONObject.parseObject(JSONObject.toJSONString(baseMsgBean), UserInfoBean.class);
+
+                            menberid=codeBean.getData().getMemberId();
+                            pid=codeBean.getData().getTaobaoPid();
+
+                            initUrl();
+                        } else {
+
+                            Goto(LoginUserActivity.class);
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        super.onError(e);
+                        Goto(LoginUserActivity.class);
+                    }
+                });
+
+    }
 
     public void initUrl() {
         TreeMap<String, String> paraMap = new TreeMap<>();
         paraMap.put("appKey", CommonUtils.TAOAPPKEY);
         paraMap.put("version", "v1.2.3");
         paraMap.put("goodsId", goodsId);
+        paraMap.put("pid",pid);
+        paraMap.put("externalId", "123456");
+      //  paraMap.put("specialId", menberid);
+        //paraMap.put("channelId", menberid);
         paraMap.put("sign", SignMD5Util.getSignStr(paraMap, CommonUtils.TAOSERCT));
         String p = null;
         try {
@@ -448,7 +513,13 @@ public class GoodsInfoActivity extends BaseActivity {
                     public void onNext(BaseMsgBean codeBean) {
                         if (codeBean.getCode() == 0) {
                             goodsLinkBean = JSONObject.parseObject(JSONObject.toJSONString(codeBean), GoodsLinkBean.class);
+                            if (getIsLogainTao() == true) {
 
+                                goTaoByItemUrl(goodsLinkBean.getData().getCouponClickUrl());
+
+                            } else {
+                                logainTaoBao();
+                            }
 
                         } else {
                             // ToastUtils.showShort(codeBean.getMsg());
@@ -603,22 +674,11 @@ public class GoodsInfoActivity extends BaseActivity {
                 Goto(SerchGoodsActivity.class);
                 break;
             case R.id.sdfcsdf:
-                if (getIsLogainTao() == true) {
+                getUserInfo();
 
-                    goTaoByItemUrl(goodsLinkBean.getData().getCouponClickUrl());
-
-                } else {
-                    logainTaoBao();
-                }
                 break;
             case R.id.btn_goto_buy:
-                if (getIsLogainTao() == true) {
-
-                    goTaoByItemUrl(goodsLinkBean.getData().getCouponClickUrl());
-
-                } else {
-                    logainTaoBao();
-                }
+                getUserInfo();
                 break;
             case R.id.imgnext:
                 dialog_spec.show();

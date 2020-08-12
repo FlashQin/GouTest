@@ -161,7 +161,15 @@ public class LikeBean {
         private int freeshipRemoteDistrict;
         private int tbcid;
         private List<Integer> subcid;
+        public boolean getmData() {
+            return mData;
+        }
 
+        public void setmData(boolean mData) {
+            this.mData = mData;
+        }
+
+        private boolean mData;
         public int getId() {
             return id;
         }

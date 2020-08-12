@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.MainThread;
 
+import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.bytedance.sdk.openadsdk.AdSlot;
@@ -21,16 +22,21 @@ import com.bytedance.sdk.openadsdk.TTSplashAd;
 import com.jaeger.library.StatusBarUtil;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
+import com.rxjava.rxlife.RxLife;
 
+import net.goutalk.fowit.Base.BaseMsgBean;
+import net.goutalk.fowit.Bean.UserInfoBean;
 import net.goutalk.fowit.R;
 import net.goutalk.fowit.Base.BaseActivity;
 import net.goutalk.fowit.MainActivity;
+import net.goutalk.fowit.net.BaseObserver;
 import net.goutalk.fowit.utils.CommonUtils;
 import net.goutalk.fowit.utils.TTAdManagerHolder;
 import net.goutalk.fowit.utils.UIUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import rxhttp.wrapper.param.RxHttp;
 
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TASK;
 import static android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP;
@@ -54,12 +60,38 @@ public class FlashActivity extends BaseActivity {
     public int getLayoutId() {
         return R.layout.activity_display;
     }
+    private void postData() {
+        RxHttp.get("/appFirstMemberStat/save.do")
+                .add("appId","01")
+                .add("appVersion",CommonUtils.getVersionName(FlashActivity.this))
+                .asObject(BaseMsgBean.class)
+                .as(RxLife.asOnMain(this))
+                .subscribe(new BaseObserver<BaseMsgBean>() {
+                    @Override
+                    public void onNext(BaseMsgBean baseMsgBean) {
+                        if (baseMsgBean.getCode() == 0) {
+
+
+                        } else {
+                          //  ToastUtils.showShort(baseMsgBean.getMsg());
+                        }
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        super.onError(e);
+                       // ToastUtils.showShort(e.toString());
+                    }
+                });
+
+    }
 
     @Override
     public void initView() {
 //        CheckPermission();
         StatusBarUtil.setTransparent(this);
         mTTAdNative = TTAdManagerHolder.get().createAdNative(this);
+        postData();
 
         if (SPUtils.getInstance().getBoolean("isFirstOpen", true)) {
 
@@ -168,7 +200,7 @@ public class FlashActivity extends BaseActivity {
             @MainThread
             public void onError(int code, String message) {
                 Log.d(TAG, String.valueOf(message));
-                ToastUtils.showShort(message);
+              //  ToastUtils.showShort(message);
 
               GotoStart();
             }
@@ -176,14 +208,14 @@ public class FlashActivity extends BaseActivity {
             @Override
             @MainThread
             public void onTimeout() {
-                ToastUtils.showShort("开屏广告加载超时");
+               // ToastUtils.showShort("开屏广告加载超时");
                 GotoStart();
             }
 
             @Override
             @MainThread
             public void onSplashAdLoad(TTSplashAd ad) {
-                Log.d(TAG, "开屏广告请求成功");
+               // Log.d(TAG, "开屏广告请求成功");
                 if (ad == null) {
                     return;
                 }

@@ -12,21 +12,29 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
+import android.os.Handler;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.ToastUtils;
 import com.jaeger.library.StatusBarUtil;
+import com.jd.kepler.res.ApkResources;
+import com.jd.open.api.sdk.DefaultJdClient;
+import com.jd.open.api.sdk.JdClient;
+import com.jd.open.api.sdk.JdException;
+import com.kepler.jd.Listener.OpenAppAction;
 import com.liulishuo.filedownloader.BaseDownloadTask;
 import com.liulishuo.filedownloader.FileDownloadSampleListener;
 import com.liulishuo.filedownloader.FileDownloader;
 import com.orhanobut.dialogplus.DialogPlus;
 import com.orhanobut.dialogplus.ViewHolder;
+
 import com.rxjava.rxlife.RxLife;
 
 import net.goutalk.fowit.Base.BaseActivity;
@@ -37,6 +45,7 @@ import net.goutalk.fowit.Bean.VersionBean;
 import net.goutalk.fowit.fragment.GameFragment;
 import net.goutalk.fowit.fragment.HomeFragment;
 import net.goutalk.fowit.fragment.HomeThreeFragment;
+import net.goutalk.fowit.fragment.NewHomeFragment;
 import net.goutalk.fowit.fragment.PersonFragment;
 import net.goutalk.fowit.fragment.StorFragment;
 import net.goutalk.fowit.fragment.VideoFragment;
@@ -50,6 +59,9 @@ import java.util.List;
 
 import butterknife.BindView;
 import cn.jzvd.Jzvd;
+import jd.union.open.goods.jingfen.query.request.JFGoodsReq;
+import jd.union.open.goods.jingfen.query.request.UnionOpenGoodsJingfenQueryRequest;
+import jd.union.open.goods.jingfen.query.response.UnionOpenGoodsJingfenQueryResponse;
 import rxhttp.wrapper.param.RxHttp;
 
 import static cn.jzvd.Jzvd.backPress;
@@ -68,7 +80,7 @@ public class MainActivity extends BaseActivity {
     private List<BaseFragment> fragments = null;
     private DialogPlus dialog_spec;
      BaseDownloadTask singleTask ;
-
+    Handler mHandler;
     private int downloadId1;
     public String singleFileSaveName  ;
     @Override
@@ -84,11 +96,18 @@ public class MainActivity extends BaseActivity {
     @Override
     public void initView() {
         checkVersion();
+        JdClient client=new DefaultJdClient("https://router.jd.com/api","","2810e99a4205ce6ff95afa25bd9b3dfc","77aaa7588f69499eb1e2f079ffd7c5c5");
+        UnionOpenGoodsJingfenQueryRequest request=new UnionOpenGoodsJingfenQueryRequest();
+        JFGoodsReq goodsReq=new JFGoodsReq();
+        request.setGoodsReq(goodsReq);
+
+          //  UnionOpenGoodsJingfenQueryResponse response=client.execute(request);
+            ToastUtils.showShort("");
 
         if (fragments == null)
             fragments = Arrays.asList(
                     //主页
-                    new HomeFragment(),
+                    new NewHomeFragment(),
                     //游戏
                     new GameFragment(),
                     //商城

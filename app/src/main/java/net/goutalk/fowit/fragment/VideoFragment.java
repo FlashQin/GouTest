@@ -54,12 +54,6 @@ import cn.jzvd.Jzvd;
 import cn.jzvd.JzvdStd;
 import rxhttp.wrapper.param.RxHttp;
 
-/**
- * @author lzy <axhlzy@live.cn>
- * @created 20/02/28
- * @modified 20/02/28
- * @description com.haichuang.chefu.ui.fragments
- */
 public class VideoFragment extends BaseFragment {
 
 //Ad
@@ -102,9 +96,7 @@ public class VideoFragment extends BaseFragment {
 
     @Override
     protected void initView(View view) {
-
         getTab();
-
         // initRec();
         // initAd();
     }
@@ -137,7 +129,7 @@ public class VideoFragment extends BaseFragment {
                             }
                             View decorView = getActivity().getWindow().getDecorView();
                             /** indicator圆角色块 */
-                            mAdapter = new MyPagerAdapter(getActivity().getSupportFragmentManager());
+                            mAdapter = new MyPagerAdapter(getChildFragmentManager());
                             vp.setAdapter(mAdapter);
                             tl9.setViewPager(vp);
                             vp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {

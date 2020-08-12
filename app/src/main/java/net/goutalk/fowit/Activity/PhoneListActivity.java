@@ -204,18 +204,28 @@ public class PhoneListActivity extends BaseActivity {
 
     public void sendMessge() {
 
-        String cont="Hi! 我在勾转零元购，在勾转购物，玩游戏，看视频就能赚零花钱哦！点击领取：http://openbox.mobilem.360.cn/index/d/sid/4535355 输入我的邀请码："+ SPUtils.getInstance().getString("code", "123")+" 还能获得最多66元大红包，1元就能提现，快来领取吧！(24小时过期)。";
+        String message="Hi! 我在勾转零元购，在勾转购物，玩游戏，看视频就能赚零花钱哦！点击领取：http://openbox.mobilem.360.cn/index/d/sid/4535355 输入我的邀请码："+ SPUtils.getInstance().getString("code", "123")+" 还能获得最多66元大红包，1元就能提现，快来领取吧！(24小时过期)。";
         for (int i = 0; i < lidata.size(); i++) {
             if (lidata.get(i).isChoose() == true) {
-                // 创建一个PendingIntent对象
-                PendingIntent pi = PendingIntent.getActivity(
-                        PhoneListActivity.this, 0, new Intent(), 0);
-                // 发送短信
                 SmsManager sManager = SmsManager.getDefault();
-                sManager.sendTextMessage("15881143606", null, cont, null, null);
+                // 创建一个PendingIntent对象
+                // 拆分短信内容（手机短信长度限制）
+                List<String> phoneList = sManager.divideMessage(message);
+                if(message.length() > 70){
+                    //拆分短信
+                    //发送短信
+                    sManager.sendMultipartTextMessage(lidata.get(i).getTelPhone().replace(" ",""), null, (ArrayList<String>) phoneList, null, null);
+                }else {
+                    //不超过70字时使用sendTextMessage发送
+                    sManager.sendTextMessage(lidata.get(i).getTelPhone().replace(" ",""), null, message, null, null);
+                }
+                // 发送短信
+
+                //sManager.sendTextMessage("15881143606", null, cont, null, null);
             }
         }
         ToastUtils.showShort("已发送");
+        finish();
 
         // 提示短信群发完成
     }

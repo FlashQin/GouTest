@@ -32,7 +32,7 @@ public abstract class BaseFragment extends Fragment {
     private Context context;
     private Unbinder unBinder;
     private LoadingDialog loadingDialog;
-
+    public double baifen=50;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

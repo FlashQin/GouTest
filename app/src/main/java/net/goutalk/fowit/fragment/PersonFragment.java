@@ -13,7 +13,6 @@ import android.widget.TextView;
 import com.alibaba.fastjson.JSONObject;
 import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
-import com.bumptech.glide.Glide;
 import com.bytedance.sdk.openadsdk.AdSlot;
 import com.bytedance.sdk.openadsdk.TTAdConstant;
 import com.bytedance.sdk.openadsdk.TTAdManager;
@@ -29,15 +28,15 @@ import com.rxjava.rxlife.RxLife;
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 
 import net.goutalk.fowit.Activity.AboutActivity;
-import net.goutalk.fowit.Activity.JingLiIntrduceActivity;
-import net.goutalk.fowit.R;
 import net.goutalk.fowit.Activity.AccountInfoActivity;
 import net.goutalk.fowit.Activity.AnsenwActivity;
 import net.goutalk.fowit.Activity.GetMoneyActivity;
+import net.goutalk.fowit.Activity.JingLiIntrduceActivity;
 import net.goutalk.fowit.Activity.LockerActivity;
 import net.goutalk.fowit.Activity.LoginUserActivity;
 import net.goutalk.fowit.Activity.LuckyActivity;
 import net.goutalk.fowit.Activity.ProblemActivity;
+import net.goutalk.fowit.Activity.ServiceOrderActivity;
 import net.goutalk.fowit.Activity.SingActivity;
 import net.goutalk.fowit.Activity.SuggestActivity;
 import net.goutalk.fowit.Activity.UserInfoActivity;
@@ -45,6 +44,7 @@ import net.goutalk.fowit.Activity.YaoActivity;
 import net.goutalk.fowit.Base.BaseFragment;
 import net.goutalk.fowit.Base.BaseMsgBean;
 import net.goutalk.fowit.Bean.UserInfoBean;
+import net.goutalk.fowit.R;
 import net.goutalk.fowit.net.BaseObserver;
 import net.goutalk.fowit.utils.CommonUtils;
 import net.goutalk.fowit.utils.TTAdManagerHolder;
@@ -107,6 +107,14 @@ public class PersonFragment extends BaseFragment {
     LinearLayout linEditOnme;
     @BindView(R.id.rel_setting)
     RelativeLayout relSetting;
+    @BindView(R.id.txt_alloder)
+    TextView txtAlloder;
+    @BindView(R.id.linoderone)
+    LinearLayout linoderone;
+    @BindView(R.id.linodertwo)
+    LinearLayout linodertwo;
+    @BindView(R.id.linoderthree)
+    LinearLayout linoderthree;
 
     private BaseQuickAdapter<String, BaseViewHolder> mAdapter;
     private DialogPlus dialog_spec;
@@ -117,6 +125,7 @@ public class PersonFragment extends BaseFragment {
     private boolean mIsExpress = false; //是否请求模板广告
     private boolean mHasShowDownloadActive = false;
     UserInfoBean codeBean;
+
     @Override
     protected void setStatusBar() {
         StatusBarUtil.setLightMode(Objects.requireNonNull(getActivity()));
@@ -165,9 +174,9 @@ public class PersonFragment extends BaseFragment {
         } else {
             txtName.setText("游客");
             txtCode.setText("");
-            Glide.with(getActivity())
-                    .load(R.mipmap.shouye_touxiang)
-                    .into(tvUserhead);
+//            Glide.with(getActivity())
+//                    .load(R.mipmap.shouye_touxiang)
+//                    .into(tvUserhead);
         }
     }
 
@@ -205,13 +214,14 @@ public class PersonFragment extends BaseFragment {
                     @Override
                     public void onNext(BaseMsgBean baseMsgBean) {
                         if (baseMsgBean.getCode() == 0) {
-                             codeBean = JSONObject.parseObject(JSONObject.toJSONString(baseMsgBean), UserInfoBean.class);
-                            txtAllCoin.setText(codeBean.getData().getCoinQuantity());
-                            txtTodayCoin.setText(codeBean.getData().getCurrentDateCoinQuantity());
-                            txtPersonCoin.setText(codeBean.getData().getInviteQuantity());
-                            allCoin = codeBean.getData().getCoinQuantity();
-                            todayCoin = codeBean.getData().getCurrentDateCoinQuantity();
+                            codeBean = JSONObject.parseObject(JSONObject.toJSONString(baseMsgBean), UserInfoBean.class);
+                            txtAllCoin.setText(codeBean.getData().getCoinQuantity() + "");
+                            txtTodayCoin.setText(codeBean.getData().getCurrentDateCoinQuantity() + "");
+                            txtPersonCoin.setText(codeBean.getData().getInviteQuantity() + "");
+                            allCoin = String.valueOf(codeBean.getData().getCoinQuantity() + "");
+                            todayCoin = String.valueOf(codeBean.getData().getCurrentDateCoinQuantity() + "");
                             SPUtils.getInstance().put("code", codeBean.getData().getInviteCode());
+                            SPUtils.getInstance().put("baifen", String.valueOf(codeBean.getData().getCommissionRate()));
 
                             loadBaseInfo(codeBean);
 
@@ -238,9 +248,9 @@ public class PersonFragment extends BaseFragment {
             if (bean.getData().getHeadUrl() != null) {
 
                 //   我自己写的游客模式
-                Glide.with(getActivity())
-                        .load(bean.getData().getHeadUrl())
-                        .into(tvUserhead);
+//                Glide.with(getActivity())
+//                        .load(bean.getData().getHeadUrl())
+//                        .into(tvUserhead);
                 //加载背景
             }
             txtName.setText(bean.getData().getMobileNo());
@@ -255,9 +265,9 @@ public class PersonFragment extends BaseFragment {
             //  ToastUtils.showShort("身份信息失效，请重新登陆");
             txtName.setText("游客");
             txtCode.setText("");
-            Glide.with(getActivity())
-                    .load(R.mipmap.shouye_touxiang)
-                    .into(tvUserhead);
+//            Glide.with(getActivity())
+//                    .load(R.mipmap.shouye_touxiang)
+//                    .into(tvUserhead);
 
 
         }
@@ -266,7 +276,7 @@ public class PersonFragment extends BaseFragment {
 
     @OnClick({R.id.linnn, R.id.tv_userhead, R.id.txt_name, R.id.txt_code, R.id.tv_search, R.id.img_msg, R.id.lin_edit, R.id.rel_action, R.id.rel_invent,
             R.id.rel_account_info, R.id.rel_getmoney, R.id.rel_usulypromber, R.id.rel_idea, R.id.lin_luck, R.id.lin_study,
-            R.id.lin_video, R.id.lin_sencrro, R.id.lin_edit_onme, R.id.rel_setting, R.id.imgjingli})
+            R.id.lin_video, R.id.lin_sencrro, R.id.lin_edit_onme, R.id.rel_setting, R.id.imgjingli,R.id.txt_alloder,R.id.linalloder ,R.id.linoderone, R.id.linodertwo, R.id.linoderthree})
     public void onViewClicked(View view) {
         if (SPUtils.getInstance().getString("TOKEN", "").equals("")) {
             Goto(LoginUserActivity.class);
@@ -308,7 +318,7 @@ public class PersonFragment extends BaseFragment {
                 Goto(ProblemActivity.class);
                 break;
             case R.id.rel_idea:
-                Goto(SuggestActivity.class,"Phone",codeBean.getData().getMobileNo());
+                Goto(SuggestActivity.class, "Phone", codeBean.getData().getMobileNo());
                 break;
             case R.id.lin_luck:
                 Goto(LuckyActivity.class);
@@ -330,6 +340,21 @@ public class PersonFragment extends BaseFragment {
                 break;
             case R.id.imgjingli:
                 Goto(JingLiIntrduceActivity.class);
+                break;
+            case R.id.txt_alloder://全部订单
+                Goto(ServiceOrderActivity.class);
+                break;
+            case R.id.linalloder://全部
+                Goto(ServiceOrderActivity.class);
+                break;
+            case R.id.linoderone:
+                Goto(ServiceOrderActivity.class);
+                break;
+            case R.id.linodertwo:
+                Goto(ServiceOrderActivity.class);
+                break;
+            case R.id.linoderthree:
+                Goto(ServiceOrderActivity.class);
                 break;
         }
     }
@@ -530,4 +555,5 @@ public class PersonFragment extends BaseFragment {
                 });
 
     }
+
 }

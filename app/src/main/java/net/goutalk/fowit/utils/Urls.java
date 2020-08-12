@@ -14,7 +14,8 @@ public class Urls {
     public static String urlnew="https://openapi.dataoke.com/api/goods/pull-goods-by-time?";//新品
     public static String urldong="https://openapi.dataoke.com/api/category/ddq-goods-list?";//dongdong
     public static String urlzroe="https://openapi.dataoke.com/api/goods/get-goods-list?";//o
-
+    public static String urltype="https://openapi.dataoke.com/api/category/get-super-category?";//一二级分类
+    public static String jdurl="https://router.jd.com/api";//一二级分类
     public static String[] videoUrlList =
             {
                     "http://jzvd.nathen.cn/c494b340ff704015bb6682ffde3cd302/64929c369124497593205a4190d7d128-5287d2089db37e62345123a1be272f8b.mp4",

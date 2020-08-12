@@ -3,7 +3,6 @@ package net.goutalk.fowit.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -12,14 +11,12 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.fastjson.JSONObject;
-import com.blankj.utilcode.util.SPUtils;
 import com.blankj.utilcode.util.ToastUtils;
 import com.chad.library.adapter.base.BaseQuickAdapter;
 import com.chad.library.adapter.base.BaseViewHolder;
 import com.rxjava.rxlife.RxLife;
 
 import net.goutalk.fowit.Base.BaseMsgBean;
-import net.goutalk.fowit.Bean.NameBean;
 import net.goutalk.fowit.Bean.UserInfoBean;
 import net.goutalk.fowit.R;
 import net.goutalk.fowit.Base.BaseActivity;
@@ -75,7 +72,7 @@ public class GetMoneyActivity extends BaseActivity {
     private BaseQuickAdapter< MoneyCheckBean, BaseViewHolder> mAdapter;
     private String allCoin="0";
     private String todayCoin="0";
-    NameBean codeBean;
+    UserInfoBean codeBean;
     int type=1;
     String money="10";
     @Override
@@ -105,7 +102,7 @@ public class GetMoneyActivity extends BaseActivity {
                     @Override
                     public void onNext(BaseMsgBean baseMsgBean) {
                         if (baseMsgBean.getCode() == 0) {
-                            codeBean = JSONObject.parseObject(JSONObject.toJSONString(baseMsgBean), NameBean.class);
+                            codeBean = JSONObject.parseObject(JSONObject.toJSONString(baseMsgBean), UserInfoBean.class);
 
                             if (codeBean.getData().getWechatNo()!=null){
                                 txtName.setText(codeBean.getData().getWechatNo());

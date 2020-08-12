@@ -12,6 +12,8 @@ import androidx.multidex.MultiDex;
 
 import com.alibaba.baichuan.android.trade.AlibcTradeSDK;
 import com.alibaba.baichuan.android.trade.callback.AlibcTradeInitCallback;
+import com.android.sdklibrary.admin.KDFInterface;
+import com.android.sdklibrary.presenter.util.Params;
 import com.blankj.utilcode.util.Utils;
 import com.bumptech.glide.Glide;
 import com.bytedance.sdk.adnet.face.IHttpStack;
@@ -103,6 +105,7 @@ public class app extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+
         JPushInterface.setDebugMode(true);
         JPushInterface.init(this);
         mContext = this;

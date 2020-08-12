@@ -290,7 +290,15 @@ public class VideoListBean {
             private int comments;
             private int ups;
             private int shares;
+            public boolean getmData() {
+                return mData;
+            }
 
+            public void setmData(boolean mData) {
+                this.mData = mData;
+            }
+
+            private boolean mData;
             public String getVideoId() {
                 return videoId;
             }

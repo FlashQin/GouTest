@@ -44,78 +44,68 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
               >
-
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="5dp"
-                    android:background="#F5F5F5" />
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="45dp"
+                    android:layout_height="38dp"
                     android:src="@mipmap/qd_bx" />
+               <TextView
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:textColor="#4D4D4D"
+                   android:textSize="10sp"
+                   android:text="答对10题"
+                   />
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
               >
 
 
-
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="45dp"
+                    android:layout_height="38dp"
                     android:src="@mipmap/qd_bx" />
-                <View
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="5dp"
-                    android:background="#F5F5F5" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#4D4D4D"
+                    android:textSize="10sp"
+                    android:text="答对20题"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
               >
 
 
-
                 <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
+                    android:layout_width="45dp"
+                    android:layout_height="38dp"
                     android:src="@mipmap/qd_bx" />
-                <View
+                <TextView
                     android:layout_width="wrap_content"
-                    android:layout_height="5dp"
-                    android:background="#F5F5F5" />
+                    android:layout_height="wrap_content"
+                    android:textColor="#4D4D4D"
+                    android:textSize="10sp"
+                    android:text="答对30题"
+                    />
+
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:gravity="center_vertical"
-                android:orientation="horizontal"
-                >
 
-
-
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@mipmap/qd_bx" />
-                <View
-                    android:layout_width="wrap_content"
-                    android:layout_height="5dp"
-                    android:background="#F5F5F5" />
-            </LinearLayout>
         </LinearLayout>
             <FrameLayout
                 android:background="@drawable/drawable_login_tv_ok"
